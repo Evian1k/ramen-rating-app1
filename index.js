@@ -17,13 +17,13 @@ function addRamen() {
         return;
     }
 
-    // Add to Gallery
+    
     const newImg = document.createElement("img");
     newImg.src = image;
     newImg.alt = name;
     newImg.onclick = () => showDetail(name, image, `${rating}/10`, comment);
     document.getElementById("ramen-gallery").appendChild(newImg);
 
-    // Reset Form
+    
     document.getElementById("ramen-form").reset();
 }
