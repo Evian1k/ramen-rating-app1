@@ -3,17 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramen Gallery</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ramen Rater</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Delicious Ramen Gallery</h1>
-    <div class="gallery">
-        <img src="gyukotsu.jpg" alt="Gyukotsu Ramen">
-        <img src="kojiro.jpg" alt="Kojiro Ramen">
-        <img src="naruto.jpg" alt="Naruto Ramen">
-        <img src="nirvana.jpg" alt="Nirvana Ramen">
-        <img src="shoyu.jpg" alt="Shoyu Ramen">
+
+    <h1 class="header">Ramen Rater</h1>
+
+    <!-- Ramen Gallery -->
+    <div id="ramen-gallery">
+        <img src="images/ramen1.jpg" alt="Naruto Ramen" onclick="showDetail('Naruto Ramen', 'images/ramen1.jpg', '10/10', 'My absolute fave!')">
+        <img src="images/ramen2.jpg" alt="Spicy Tonkotsu" onclick="showDetail('Spicy Tonkotsu', 'images/ramen2.jpg', '8/10', 'Great flavor!')">
+        <img src="images/ramen3.jpg" alt="Shoyu Ramen" onclick="showDetail('Shoyu Ramen', 'images/ramen3.jpg', '9/10', 'Very delicious!')">
+        <img src="images/ramen4.jpg" alt="Miso Ramen" onclick="showDetail('Miso Ramen', 'images/ramen4.jpg', '7/10', 'Could use more spice.')">
+        <img src="images/ramen5.jpg" alt="Shio Ramen" onclick="showDetail('Shio Ramen', 'images/ramen5.jpg', '9/10', 'Super tasty!')">
     </div>
+
+    <!-- Selected Ramen Details -->
+    <div id="ramen-detail">
+        <img id="detail-img" src="images/ramen1.jpg" alt="Selected Ramen">
+        <h2 id="detail-name">Naruto Ramen</h2>
+        <p><strong>Rating:</strong> <span id="detail-rating">10/10</span></p>
+        <p><strong>Comment:</strong> <span id="detail-comment">My absolute fave!</span></p>
+    </div>
+
+    <!-- Add New Ramen Form -->
+    <form id="ramen-form">
+        <h2>Add New Ramen</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        
+        <label for="restaurant">Restaurant:</label>
+        <input type="text" id="restaurant" required>
+        
+        <label for="image">Image URL:</label>
+        <input type="text" id="image" required placeholder="Paste image URL">
+        
+        <label for="rating">Rating:</label>
+        <select id="rating">
+            <option value="10">10</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5</option>
+        </select>
+        
+        <label for="comment">Comment:</label>
+        <textarea id="comment" required></textarea>
+        
+        <button type="button" onclick="addRamen()">Create</button>
+    </form>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
